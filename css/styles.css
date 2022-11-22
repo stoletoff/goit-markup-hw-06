@@ -237,7 +237,6 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    padding: 40px;
     min-width: 528px;
     min-height: 581px;
     border-radius: 4px;
@@ -285,6 +284,15 @@ a {
     margin-bottom: 12px;
 }
 
+.form {
+    width: 528px;
+    height: 581px;
+    margin-left: auto;
+    margin-left: auto;
+    padding: 40px;
+    
+}
+
 .form-field {
     display: flex;
     flex-direction: column;
@@ -301,11 +309,55 @@ a {
 .form-field input {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    padding-left: 12px;
+    padding-top: 11px;
+    padding-bottom: 11px;
 }
 
-.form-field input::placeholder {
+.form-field label {
+    padding-bottom: 4px;
+}
+
+.textarea-comment {
+    height: 138px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    font-style: normal;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.01em;
     padding: 12px 16px;
     color: rgba(117, 117, 117, 0.5);
+}
+
+.button-submit {
+    margin-top: 20px;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    padding: 10px 52px;
+    min-width: 200px;
+
+    background-color: var(--accent-color);
+    color:#FFFFFF;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: calc(30 / 16);
+    letter-spacing: 0.06em;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-submit:hover,
+.button-submit:focus {
+    background-color: #188CE8;    
+}
+
+
+textarea {
+    resize: none;
 }
 
 /*----------  Feature-list ---------- */

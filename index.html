@@ -54,8 +54,8 @@
                       <use href="./images/symbol-defs-optimized.svg#icon-close"></use>
                     </svg>
                 </button>
-              <p class="backdrop-hero">Залиште свої дані, ми вам передзвонимо</p>
-              <form>
+              <form class="form">
+                <p class="backdrop-hero">Залиште свої дані, ми вам передзвонимо</p>
                 <div class="form-field">
                   <label for="name">Ім'я</label>
                   <input type="text" name="name" id="name">
@@ -70,8 +70,19 @@
                 </div>
                 <div class="form-field">
                   <label for="comment">Коментар</label>
-                  <textarea name="comment" id="comment" rows="8" placeholder="Введіть текст"></textarea>
+                  <textarea
+                  class="textarea-comment"
+                  name="comment"
+                  id="comment"
+                  rows="8"
+                  placeholder="Введіть текст"
+                  ></textarea>
                 </div>
+                <div class="form-field">
+                  <label type="chekbox" name="policy" id="policy"></label>
+                  <input for="policy"><span>Погоджуюся з розсилкою та приймаю <span>Умови договору</span></span></label>
+                </div>
+                <button class="button-submit" type="submit">Відправити</button>
               </form>
               </div>  
             </div>
