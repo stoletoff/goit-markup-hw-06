@@ -244,6 +244,7 @@ a {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     transform: translate(-50%,-50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px;
 
 } 
 
@@ -260,11 +261,15 @@ a {
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: #FFFFFF;
-
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0;
     cursor: pointer;
 }
 
+.close-button:hover,
+.close-button:focus {
+    fill: var(--accent-color);
+}
 
 .is-hidden {
     opacity: 0;
@@ -276,7 +281,7 @@ a {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.backdrop-hero {
+.modal-title {
     font-weight: 700;
     font-size: 20px;
     line-height: calc(23 / 14);
@@ -284,21 +289,15 @@ a {
     margin-bottom: 12px;
 }
 
-.form {
-    width: 528px;
-    height: 581px;
-    margin-left: auto;
-    margin-left: auto;
-    padding: 40px;
-    
-}
-
-.form-field {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
+.modal-field {
     margin-bottom: 10px;
+    }
 
+.input-label {
+    display: block;
+    position: relative;
+    text-align: start;
+    margin-bottom: 4px;
     font-style: normal;
     font-size: 12px;
     line-height: calc(14 / 12);
@@ -306,59 +305,129 @@ a {
     color: #757575;
 }
 
-.form-field input {
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    padding-left: 12px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+.input-wrapper {
+    position: relative;
 }
 
-.form-field label {
-    padding-bottom: 4px;
+.modal-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    background-color: transparent;
+    outline: transparent;
+    border-radius: 4px;
+    padding-left: 42px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
+
+.modal-icon {
+    position: absolute;
+    left: 15px;
+    top:50%;
+    transform:translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}   
+
+
+.modal-input:focus {
+    border-color: var(--accent-color);
+
+}
+
+.modal-input:focus + .modal-icon {
+    fill: var(--accent-color);
+
+}
+
 
 .textarea-comment {
+    width: 100%;
     height: 138px;
-    margin-bottom: 10px;
     border-radius: 4px;
     border: 1px solid rgba(33, 33, 33, 0.2);
-    font-style: normal;
+    padding-left: 16px;
+    padding-top: 12px;
+    resize: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.textarea-comment::placeholder {
+
     font-size: 12px;
     line-height: calc(14 / 12);
     letter-spacing: 0.01em;
-    padding: 12px 16px;
+
     color: rgba(117, 117, 117, 0.5);
 }
 
-.button-submit {
-    margin-top: 20px;
-    border: 0px solid transparent;
-    border-radius: 4px;
-    padding: 10px 52px;
-    min-width: 200px;
+.textarea-comment:focus {
+    outline: none;
+    border: 1px solid var(--accent-color);
+}
 
-    background-color: var(--accent-color);
-    color:#FFFFFF;
+.chek-text {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 12px;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+    color: #757575;
+}
 
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    line-height: calc(30 / 16);
-    letter-spacing: 0.06em;
+.chek-text span {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 2px;
+    margin-right: 7px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.button-submit:hover,
-.button-submit:focus {
-    background-color: #188CE8;    
 }
 
 
-textarea {
-    resize: none;
+
+.policy-link {
+    color: var(--accent-color);
+    text-decoration: underline;
+    margin-left: 5px;
 }
+.modal-check:checked + .chek-text span {
+    background-color: var(--accent-color);
+    border: none;
+    fill: #ffffff;
+}
+
+    .button-submit {
+        margin-top: 20px;
+        border: 0px solid transparent;
+        border-radius: 4px;
+        padding: 10px 52px;
+        min-width: 200px;
+
+        background-color: var(--accent-color);
+        color:#FFFFFF;
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        line-height: calc(30 / 16);
+        letter-spacing: 0.06em;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .button-submit:hover,
+    .button-submit:focus {
+        background-color: #188CE8;    
+    }
+
+
 
 /*----------  Feature-list ---------- */
 .feature-list {
