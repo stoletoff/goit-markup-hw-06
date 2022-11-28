@@ -403,6 +403,10 @@ a {
     fill: #ffffff;
 }
 
+.modal-check:focus + .chek-text span {
+    border-color: var(--accent-color); 
+}
+
     .button-submit {
         margin-top: 20px;
         border: 0px solid transparent;
@@ -819,7 +823,7 @@ a {
 .footer-subscribe {
     display: flex;
     flex-direction: column;
-    margin-left: 93px;
+    margin-left: auto;
 }
 
 .subscribe-button {
